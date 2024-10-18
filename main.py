@@ -1,6 +1,11 @@
 import asyncio
 import logging
 
+from core.main_handler import MainHandler
+from core.utils.PaymentSystem import PaymentSystem
+from core.utils.RestHandler import RestHandler
+
+
 async def main():
     with open('data/history.log', 'w') as file:
         file.write('')
@@ -12,8 +17,12 @@ async def main():
         encoding='utf-8',
     )
 
-    logging.info(f"Bot started")
-    return
+    rest_handler = RestHandler()
+    payment_rest_handler = RestHandler(verify_ssl=False)
+    payment_handler = PaymentSystem(payment_rest_handler)
+    main_handler = MainHandler(rest_handler, payment_handler)
+
+    await main_handler.start()
 
 if __name__ == '__main__':
     asyncio.run(main())
