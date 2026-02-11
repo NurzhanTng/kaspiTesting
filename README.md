@@ -49,6 +49,7 @@
 
 ---
 
-**Kaspi Terminal Payment Tracker Bot** is open-source and free to use. Contributions are always welcome! If you find any issues or have ideas for new features, feel free to create an issue or submit a pull request.
+**Kaspi Terminal Payment Tracker Bot** is open-source and free to use. Contributions are always welcome! If you find any issues or have ideas for new features, feel free to create an issue or submit a pull request. 
+
 
 
